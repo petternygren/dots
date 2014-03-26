@@ -7,23 +7,15 @@ adduser petter sudo
 su - petter
 sleep 3
 
-#Pull files from github
-mkdir -p ~/.gitfiles
-cd ~/.gitfiles
-sleep 3
-git clone git://github.com/petternygren/dots/Xdefaults
-sleep 3
-git clone git://github.com/petternygren/dots/autostart
-sleep 3
-\cd
+
 
 #WM hlwm
 sudo apt-get install herbstluftwm
 mkdir -p ~/.config/herbstluftwm
 #cp /etc/xdg/herbstluftwm/autostart ~/.config/herbstluftwm #for default config
-cp ~/.gitfiles/autostart ~/.config/herbstluftwm
+cp ~/dots/autostart ~/.config/herbstluftwm
 #Terminal
-cp ~/.gitfiles/Xdefaults ~/.Xdefaults
+cp ~/dots/Xdefaults ~/.Xdefaults
 
 echo "exec herbstluftwm --locked" >> ~/.xsession
 sleep 3
